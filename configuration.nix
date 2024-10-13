@@ -93,6 +93,7 @@
       prismlauncher
       syncthing
       syncthingtray
+      obsidian
     ];
   };
 
