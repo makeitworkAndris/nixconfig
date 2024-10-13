@@ -91,6 +91,8 @@
       thunderbird
       discord
       prismlauncher
+      syncthing
+      syncthingtray
     ];
   };
 
