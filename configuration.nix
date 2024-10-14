@@ -94,6 +94,7 @@
       syncthing
       syncthingtray
       obsidian
+      anki
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
