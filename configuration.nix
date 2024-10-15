@@ -95,6 +95,7 @@
       syncthingtray
       obsidian
       anki
+      ciscoPacketTracer8
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
