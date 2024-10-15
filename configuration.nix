@@ -113,7 +113,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Install java
-  programs.java = { enable = true; package = pkgs.jdk21_headless; }
+  programs.java = { enable = true; package = pkgs.jdk21_headless; };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
