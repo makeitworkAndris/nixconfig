@@ -119,6 +119,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    p7zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
