@@ -120,8 +120,12 @@
   environment.systemPackages = with pkgs; [
     git
     p7zip
+    mouse_m908
   ];
-
+  
+  services.udev.packages = with pkgs; [ 
+    mouse_m908
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
