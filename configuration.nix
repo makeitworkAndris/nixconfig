@@ -94,7 +94,7 @@
       syncthing
       syncthingtray
       obsidian
-      anki
+      #anki
       strawberry-qt6
       filezilla
     ];
