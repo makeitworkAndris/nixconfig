@@ -96,6 +96,7 @@
       obsidian
       anki
       strawberry-qt6
+      filezilla
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
