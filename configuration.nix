@@ -16,11 +16,9 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -64,6 +62,10 @@
   # Enable sound with pipewire.
   # sound.enable = true;
   hardware.pulseaudio.enable = false;
+  #Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -119,6 +121,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     git
     p7zip
