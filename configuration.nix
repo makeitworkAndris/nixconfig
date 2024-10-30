@@ -99,6 +99,7 @@
       #anki
       strawberry-qt6
       filezilla
+      baobab
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
