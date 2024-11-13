@@ -52,6 +52,8 @@
     layout = "hu";
     xkbVariant = "";
   };
+  #Waydroid
+  virtualisation.waydroid.enable = true;  
 
   # Configure console keymap
   console.keyMap = "hu";
