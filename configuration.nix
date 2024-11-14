@@ -92,15 +92,17 @@
       kate
       thunderbird
       discord
-      prismlauncher
+      prismlauncher #mc
       syncthing
       syncthingtray
-      obsidian
+      obsidian 
       #anki
-      strawberry-qt6
-      filezilla
-      baobab
-      genymotion
+      strawberry-qt6 #music
+      filezilla #sftp
+      baobab #disk visualization
+      genymotion #android emulator
+      lutris
+      vlc
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
