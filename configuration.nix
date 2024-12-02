@@ -99,12 +99,12 @@
       #anki
       strawberry-qt6 #music
       filezilla #sftp
-      baobab #disk visualization
+      #baobab #disk visualization
       genymotion #android emulator
       lutris
       vlc
       steam
-      gparted
+      nicotine-plus
     ];
   };
   #anki or obsidian

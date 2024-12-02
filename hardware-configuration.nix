@@ -24,7 +24,7 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/mnt" =
+  fileSystems."/mnt/4TB" =
     { device = "/dev/disk/by-uuid/a1b1e4ef-f745-403c-ab66-482f44eba7b0";
       fsType = "ext4";
     };
