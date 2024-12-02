@@ -103,12 +103,22 @@
       genymotion #android emulator
       lutris
       vlc
+      steam
+      gparted
     ];
   };
+  #anki or obsidian
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
-
+  #steam
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+  
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "snow";
