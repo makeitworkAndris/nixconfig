@@ -105,6 +105,7 @@
       vlc
       steam
       nicotine-plus
+      blender
     ];
   };
   #anki or obsidian
