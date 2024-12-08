@@ -109,6 +109,7 @@
         cudaSupport = true;
       })
       gimp
+      amarok
     ];
   };
   #anki or obsidian
