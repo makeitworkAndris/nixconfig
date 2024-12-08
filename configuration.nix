@@ -105,7 +105,10 @@
       vlc
       steam
       nicotine-plus
-      blender
+      (blender.override {
+        cudaSupport = true;
+      })
+      gimp
     ];
   };
   #anki or obsidian
