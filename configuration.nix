@@ -110,6 +110,7 @@
       })
       gimp
       amarok
+      notepadqq
     ];
   };
   #anki or obsidian
