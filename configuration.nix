@@ -44,13 +44,13 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "hu";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Configure console keymap
@@ -126,7 +126,7 @@
   };
   
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "snow";
 
   # Install firefox.
@@ -177,12 +177,10 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
   
   # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-  };
+  hardware.graphics.enable = true;
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
