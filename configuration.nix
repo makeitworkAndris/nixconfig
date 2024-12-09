@@ -44,7 +44,7 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
@@ -127,7 +127,7 @@
   
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "snow";
+  services.displayManager.autoLogin.user = "snow";
 
   # Install firefox.
   programs.firefox.enable = true;
