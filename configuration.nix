@@ -113,6 +113,7 @@
       notepadqq #notepad ++ kinda
       hdparm #config hdd-s
       smartmontools #check hdd status
+      peek #screen to gif program
     ];
   };
   #anki or obsidian
