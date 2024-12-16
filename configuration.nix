@@ -109,8 +109,10 @@
         cudaSupport = true;
       })
       gimp
-      amarok
-      notepadqq
+      amarok #music player 2 -> gives recommendations
+      notepadqq #notepad ++ kinda
+      hdparm #config hdd-s
+      smartmontools #check hdd status
     ];
   };
   #anki or obsidian
