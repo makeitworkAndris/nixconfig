@@ -40,6 +40,13 @@
     LC_TIME = "hu_HU.UTF-8";
   };
 
+  services.udev = {
+     extraRules = ''
+        ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 50 -S 60 /dev/sda"
+     '';
+  }  
+
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
