@@ -39,14 +39,14 @@
     LC_TELEPHONE = "hu_HU.UTF-8";
     LC_TIME = "hu_HU.UTF-8";
   };
-
+  
+  #hdd spin down by ID
   services.udev = {
-     extraRules = ''
-        ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 50 -S 60 /dev/sda"
-     '';
-  }  
-
-
+    extraRules = ''
+       ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", ENV{ID_SERIAL_SHORT}=="PK2334PCGZ1ZVB", RUN+="${pkgs.hdparm}/bin/hdparm -B 50 -S 60 /dev/sdb"
+    '';
+  };  
+  
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
