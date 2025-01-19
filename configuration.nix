@@ -124,6 +124,7 @@
       megasync
      #librewolf
       samba
+      libreoffice-qt6
     ];
   };
   #anki or obsidian
@@ -138,6 +139,7 @@
   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  ##########################
   services.samba = {
   enable = true;
   securityType = "user";
@@ -168,11 +170,13 @@
     };
   };
 };
+
   services.samba-wsdd = {
     enable = true;
     openFirewall = true;
   };
-  services.minidlna.enable = true;
+
+  services.minidlna.enable = false;
   services.minidlna.openFirewall = true;
   services.minidlna.settings = {
     friendly_name = "NixOS_DLNA";
@@ -188,7 +192,7 @@
     extraGroups =
       [ "users" "samba" "wheel" "tolga" ]; # so minidlna can access the files.
     };
-    
+   
 
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
