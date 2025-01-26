@@ -56,7 +56,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "hu";
+    layout = "hu, gb";
     variant = "";
   };
 
@@ -125,6 +125,9 @@
      #librewolf
       samba
       libreoffice-qt6
+      jellyfin
+      jellyfin-web
+      jellyfin-ffmpeg
     ];
   };
   #anki or obsidian
@@ -176,24 +179,22 @@
     openFirewall = true;
   };
 
-  services.minidlna.enable = false;
-  services.minidlna.openFirewall = true;
-  services.minidlna.settings = {
-    friendly_name = "NixOS_DLNA";
-    media_dir = [
-      "PV,/mnt/4TB/SweetieFox/"
-    ];
-   
-    inotify = "yes";
-    log_level = "error";
-    announceInterval = 05;
-  };
-    users.users.minidlna = {
-    extraGroups =
-      [ "users" "samba" "wheel" "tolga" ]; # so minidlna can access the files.
-    };
-   
-
+  #Jellyfin
+  services.jellyfin.enable = true;
+  services.jellyfin.openFirewall = true;
+  
+  services.openssh = {
+      enable = true;
+      ports = [ 22 ];
+      settings = {
+        PasswordAuthentication = true;
+        AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+        UseDns = true;
+        X11Forwarding = false;
+        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      };
+    };     
+ 
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
   
@@ -238,8 +239,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200];
-  networking.firewall.allowedUDPPorts = [ 8080  137  138  8200];
+  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200  22];
+  networking.firewall.allowedUDPPorts = [ 8080  137  138  8200  22];
   # Or dsable the firewall altogether.
   # networking.firewall.enable = false;
 
