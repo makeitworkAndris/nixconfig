@@ -128,6 +128,7 @@
       jellyfin
       jellyfin-web
       jellyfin-ffmpeg
+      jan
     ];
   };
   #anki or obsidian
