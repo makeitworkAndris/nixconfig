@@ -129,6 +129,8 @@
       jellyfin-web
       jellyfin-ffmpeg
       jan
+      btop
+      lidarr
     ];
   };
   #anki or obsidian
@@ -240,8 +242,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200  22];
-  networking.firewall.allowedUDPPorts = [ 8080  137  138  8200  22];
+  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200  22  2234];
+  networking.firewall.allowedUDPPorts = [ 8080  137  138  8200  22  2234];
   # Or dsable the firewall altogether.
   # networking.firewall.enable = false;
 
