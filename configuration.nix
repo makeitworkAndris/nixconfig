@@ -132,6 +132,8 @@
       btop
       lidarr
       pkgs.linuxKernel.packages.linux_xanmod_stable.xone
+      nodejs_22
+      nginx
     ];
   };
   #anki or obsidian
