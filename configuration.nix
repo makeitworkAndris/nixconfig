@@ -134,6 +134,11 @@
       pkgs.linuxKernel.packages.linux_xanmod_stable.xone
       nodejs_22
       nginx
+      vscode
+      krita
+      davinci-resolve
+      shotcut
+      openshot-qt
     ];
   };
   #anki or obsidian
@@ -149,41 +154,6 @@
   };
 
   ##########################
-  services.samba = {
-  enable = true;
-  securityType = "user";
-  openFirewall = true;
-  settings = {
-    global = {
-      "workgroup" = "WORKGROUP";
-      "server string" = "smbnix";
-      "netbios name" = "smbnix";
-      "security" = "user";
-      #"use sendfile" = "yes";
-      #"max protocol" = "smb2";
-      # note: localhost is the ipv6 localhost ::1
-      "hosts allow" = "192.168.0.100 192.168.1.109 127.0.0.1 localhost";
-      "hosts deny" = "0.0.0.0/0";
-      "guest account" = "nobody";
-      "map to guest" = "bad user";
-    };
-    "public" = {
-      "path" = "/mnt/4TB/SweetieFox/";
-      "browseable" = "yes";
-      "read only" = "no";
-      "guest ok" = "yes";
-      "create mask" = "0644";
-      "directory mask" = "0755";
-      "force user" = "nobody";
-     #"force group" = "nobgroup";
-    };
-  };
-};
-
-  services.samba-wsdd = {
-    enable = true;
-    openFirewall = true;
-  };
 
   #Jellyfin
   services.jellyfin.enable = true;
@@ -245,7 +215,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200  22  2234];
+  networking.firewall.allowedTCPPorts = [ 8080  445  139  8200  22  2234  80  443];
   networking.firewall.allowedUDPPorts = [ 8080  137  138  8200  22  2234];
   # Or dsable the firewall altogether.
   # networking.firewall.enable = false;
