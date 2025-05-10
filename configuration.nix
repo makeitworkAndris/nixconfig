@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs,  ... }:
 
 {
   imports =
@@ -96,7 +96,7 @@
     description = "snow";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kate
+      kdePackages.kate
       thunderbird
       discord
       prismlauncher #mc
@@ -138,7 +138,8 @@
       krita
       davinci-resolve
       shotcut
-      openshot-qt
+      kdePackages.kdenlive
+      rustdesk
     ];
   };
   #anki or obsidian
@@ -196,6 +197,9 @@
     git
     p7zip
     mouse_m908
+    #python3
+    #ffmpeg-full
+    #inputs.tagstudio.packages.${pkgs.stdenv.hostPlatform.system}.tagstudio
   ];
   
   services.udev.packages = with pkgs; [ 
@@ -226,7 +230,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
   
   # Enable OpenGL
   hardware.graphics.enable = true;
