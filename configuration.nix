@@ -136,10 +136,9 @@
       nginx
       vscode
       krita
-      davinci-resolve
-      shotcut
       kdePackages.kdenlive
       rustdesk
+      jdiskreport
     ];
   };
   #anki or obsidian
